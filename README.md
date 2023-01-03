@@ -21,7 +21,7 @@ The Reference Viewer application enables annotators to view other items in a dra
 
 ## Installation
 * Clone the repository -  `git clone https://github.com/dataloop-ai-apps/reference-viewer.git`
-* `cd reference-viewer`
+* Navigate to the repository - `cd reference-viewer`
 * Publish the app -  `dlp app publish --project-name <PROJECT_NAME>`
 * Install - `dlp app install --dpk-id <DPK ID> --project-name <PROJECT_NAME>`
 
