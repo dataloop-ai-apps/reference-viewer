@@ -1,7 +1,40 @@
-# Vue 3 + Vite
+# Reference Viewer
 
-This template should help get you started developing with Vue 3 in Vite. The template uses Vue 3 `<script setup>` SFCs, check out the [script setup docs](https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup) to learn more.
+  <img height="40mm" src="https://mk0dataloop4fni44fjg.kinstacdn.com/wp-content/uploads/2020/03/logo.svg">
 
-## Recommended IDE Setup
+---
 
-- [VS Code](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar)
+  <img src="./docs/example.png">
+
+---
+## Description
+
+The Reference Viewer application enables annotators to view other items in a draggable, resizable window (A.K.A Floating Window) while annotating in the studio.
+
+## Supported mimetypes
+* `image/*`
+* `application/pdf`
+
+
+## Installation
+* Clone the repository -  `git clone https://github.com/dataloop-ai-apps/reference-viewer.git`
+* `cd reference-viewer`
+* Publish the app -  `dlp app publish --project-name <PROJECT_NAME>`
+* Install - `dlp app install --dpk-id <DPK ID> --project-name <PROJECT_NAME>`
+
+## Application Usage in the Platform
+To use the Reference Viewer in an item, edit the item's Metadata and add a modalitiy of type "preview" as follows:
+``` json
+"modalities": [{
+    "ref": "63b42ec7f0d95bdf257c5f8f",
+    "type": "preview",
+    "mimetype": "image/png",
+    "stream": "https://gate.dataloop.ai/api/v1/items/63b42ec7f0d95bdf257c5f8f/stream"
+}]
+```
+
+  <img src="./docs/metadata.png">
+
+## Contributions, Bugs and Issues - How to Contribute  
+We welcome anyone to help us improve this app.  
+[Here's](CONTRIBUTING.md) a detailed instructions to help you open a bug or ask for a feature request
