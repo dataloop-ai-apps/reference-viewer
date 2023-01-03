@@ -6,8 +6,8 @@ with open('./dataloop.json') as json_file:
     current_version = data['version'].split('.')
     current_version[-1] = str(int(current_version[-1]) + 1)
     data['version'] = '.'.join(current_version)
-    data['source']['tag'] = f'v{data["version"]}'
-    current_version = data['source']['tag']
+    data['codebase']['gitTag'] = f'v{data["version"]}'
+    current_version = data['codebase']['gitTag']
     print(current_version)
     
 with open("./dataloop.json", "w") as jsonFile:
