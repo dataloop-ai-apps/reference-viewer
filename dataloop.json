@@ -1,18 +1,18 @@
 {
   "id": "2",
-  "version": "1.0.21",
+  "version": "1.0.0",
   "creator": "adva.a@dataloop.ai",
-  "name": "referenceViewer1",
-  "displayName": "referenceViewer1",
+  "name": "referenceViewer2",
+  "displayName": "reference-viewer",
   "description": "",
   "icon": "icon-dl-sdk-documentation",
   "categories": [
     "referenceViewer"
   ],
-  "source": {
+  "codebase": {
     "type": "git",
-    "repo": "https://github.com/dataloop-ai-apps/preview-modality.git",
-    "tag": "v1.0.21"
+    "gitUrl": "https://github.com/dataloop-ai-apps/reference-viewer.git",
+    "gitTag": "v1.0.0"
   },
   "scope": "organization",
   "components": {
@@ -80,7 +80,7 @@
     ],
     "services": [
       {
-        "name": "runner80",
+        "name": "runner81",
         "panelNames": [
           "referenceViewer"
         ],
