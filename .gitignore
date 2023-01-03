@@ -11,6 +11,7 @@ docs/_book
 
 # TODO: where does this rule come from?
 test/
+publish.py
 
 ### Vuejs ###
 # Recommended template: Node.gitignore
