@@ -1,0 +1,18 @@
+import * as pdfjsLib from 'pdfjs-dist/legacy/build/pdf'
+import PDFJSWorker from 'pdfjs-dist/legacy/build/pdf.worker.entry'
+
+const TOKEN = 'Bearer eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6IlFqQTVPRVF3Umpnek9ESXdNa1E1UmpjMU5VVXpRMFJGTXpsRE9URTBOMEZGUVVZMk0wWkJPQSJ9.eyJodHRwczovL2RhdGFsb29wLmFpL2F1dGhvcml6YXRpb24iOnsiZ3JvdXBzIjpbXSwicm9sZXMiOltdLCJ1c2VyX3R5cGUiOiJodW1hbiJ9LCJnaXZlbl9uYW1lIjoiRGVsbCIsImZhbWlseV9uYW1lIjoiWFBTIiwibmlja25hbWUiOiJhbGlldl9hbWlyemhhbmkiLCJuYW1lIjoiRGVsbCBYUFMiLCJwaWN0dXJlIjoiaHR0cHM6Ly9saDMuZ29vZ2xldXNlcmNvbnRlbnQuY29tL2EvQUVkRlRwN1RBS3cza0NrUVJpMVc4VTRYOFVXTkZhR0NXQVN4SVdNZVZ0UjA1Zz1zOTYtYyIsImxvY2FsZSI6InJ1IiwidXBkYXRlZF9hdCI6IjIwMjMtMDEtMDJUMjA6MDI6MzQuMzUzWiIsImVtYWlsIjoiYWxpZXZfYW1pcnpoYW5pQG1haWwucnUiLCJlbWFpbF92ZXJpZmllZCI6dHJ1ZSwiaXNzIjoiaHR0cHM6Ly9kYXRhbG9vcC1wcm9kdWN0aW9uLmF1dGgwLmNvbS8iLCJzdWIiOiJnb29nbGUtb2F1dGgyfDEwMDkyNzIwNjk1MzMyMDEwNTU3NiIsImF1ZCI6IkZyRzBIWmdhMUNLNVVWVVNKSnVEa1NEcUl0UGllV0dXIiwiaWF0IjoxNjcyNzc1ODg3LCJleHAiOjE2NzI4NjIyODd9.COj-ixNQcIGuph6L-0gxcvHlSDhGM7H8dWjnb0U7TJ_fOVtkOBITjnr3lcgfZ76CQzsePWmUmqUBFu0o9LnlOkSLOzaNrdohQ5npMB2PG_e-5kniNRW5liVszmxAYEyifzcIjmLA3hPb9HN1sNj2rtah2v8zVwYnWY0QYTzlZcA1jUP7d6FcoFhuhz6T_IAbeMmtoZ-hPot2v9lIAViByQxhBYeo6gAuQEqyXeLTqq3PEdIOMXI3po0bP6-GXk5lAvdBEv2bzY8e1kXzMrqB0mkqBYwJv8TOpfoDHlcpf9Z3JamME9v5fcQMHnW1KYrdzxyHH-JtUE3zzA57F-gKEg'
+
+// See, https://mozilla.github.io/pdf.js/api/draft/module-pdfjsLib.html#~DocumentInitParameters
+// eslint-disable-next-line import/prefer-default-export
+export const createLoadingTask = (src) => {
+  pdfjsLib.GlobalWorkerOptions.workerSrc = PDFJSWorker.toString()
+  const loadingTask = pdfjsLib.getDocument({
+    url: src,
+    httpHeaders: {
+      Authorization: TOKEN,
+    },
+    withCredentials: true,
+  })
+  return loadingTask
+}
