@@ -1,48 +1,58 @@
 <template>
-    <div class="imageContainer" v-if="!loading && url.length">
-        <img :src="url" ref="imgElem" />
-    </div>
-    <div v-if="!url.length" class="content">
-        No media found
-    </div>
+  <div
+    v-if="!loading && url.length"
+    class="imageContainer"
+  >
+    <img
+      ref="imgElem"
+      :src="url"
+    >
+  </div>
+  <div
+    v-if="!url.length"
+    class="content"
+  >
+    No media found
+  </div>
 </template>
 
 <script>
 
 export default {
-    props: [
-        "setIsOpen",
-        "isBlackTheme",
-        "url",
-        "loading",
-        "top",
-        "right",
-        "width",
-        "height",
-        "imgWidth",
-        "imgHeight"
-    ],
-    name: "image-component",
+  name: 'ImageComponent',
+  props: [
+    'setIsOpen',
+    'isBlackTheme',
+    'url',
+    'loading',
+    'top',
+    'right',
+    'width',
+    'height',
+    'imgWidth',
+    'imgHeight',
+  ],
 }
 </script>
 
-<style>
-
+<style lang="scss">
 .imageContainer {
-    overflow: hidden
-}
+  overflow: hidden;
+  background: #2a2a2e;
 
-.imageContainer img {
+  img {
     width: 100vw;
     height: 100vh;
+    object-fit: contain;
+  }
 }
 
 .content {
-    width: 100vw;
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    align-self: center;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-self: center;
 }
 </style>
