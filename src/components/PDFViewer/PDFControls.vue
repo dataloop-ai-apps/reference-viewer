@@ -2,13 +2,11 @@
   <div class="page-controls">
     <button
       type="button"
-      class="button-left"
+      class="button-left icon-dl-left-chevron"
       title="Page down"
       :disabled="page <= 1"
       @click="emit('page-down')"
-    >
-      <ChevronLeftIcon />
-    </button>
+    />
     <div class="controller">
       <input
         ref="inputField"
@@ -26,7 +24,7 @@
       :disabled="page >= numOfPages"
       @click="emit('page-up')"
     >
-      <ChevronRightIcon />
+      <i class="icon-dl-right-chevron"></i>
     </button>
 
     <div class="pdf-zoom">
@@ -37,7 +35,7 @@
         :disabled="scale > 5"
         @click.prevent.stop="zoomIn"
       >
-        <ZoomInIcon />
+      <i class="icon-dl-zoom-in"></i>
       </button>
       <button
         type="button"
@@ -46,7 +44,7 @@
         :disabled="scale < 1.05"
         @click.prevent.stop="zoomOut"
       >
-        <ZoomOutIcon />
+      <i class="icon-dl-zoom-out"></i>
       </button>
       <button
         type="button"
@@ -54,27 +52,21 @@
         title="Fit width"
         @click.prevent.stop="fitWidth"
       >
-        <ExpandIcon />
-      </button>
+        <i class="icon-dl-full-screen"></i>     
+       </button>
       <button
         type="button"
         class="icon button-right"
         title="Fit auto"
         @click.prevent.stop="fitAuto"
       >
-        <ShrinkIcon />
+        <i class="icon-dl-fit-to-screen"></i>
       </button>
     </div>
   </div>
 </template>
 
 <script setup>
-import ChevronLeftIcon from '../../assets/chevron-left.svg'
-import ChevronRightIcon from '../../assets/chevron-right.svg'
-import ZoomInIcon from '../../assets/zoom-in.svg'
-import ZoomOutIcon from '../../assets/zoom-out.svg'
-import ExpandIcon from '../../assets/expand.svg'
-import ShrinkIcon from '../../assets/shrink.svg'
 
 const props = defineProps({
   page: {

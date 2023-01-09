@@ -46,7 +46,7 @@
           <button
             id="btnReplay"
             :class="{ active: isActive }"
-            class="icon-dl-repeat btnReplay"
+            class="icon-dl-replay btnReplay"
             @click="replayVideo()"
           />
           <span @click="changeSpeed()">x{{ speedValue }}</span>
@@ -59,7 +59,7 @@
           />
           <button
             id="btnPrevious"
-            class="icon-dl-back-1"
+            class="icon-dl-back-frame"
             @click="toPreviousFrame()"
           />
           <button
@@ -76,8 +76,8 @@
           />
           <button
             id="btnNext"
-            class="icon-dl-forward"
-            @click="toNextFrame()"
+            class="icon-dl-next-frame"
+            @click="toNextFrame()"  
           />
           <button
             id="btnEnd"
