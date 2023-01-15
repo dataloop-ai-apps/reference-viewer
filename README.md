@@ -13,6 +13,7 @@ The Reference Viewer application enables annotators to view other items in a dra
 
 ## Supported mimetypes
 * `image/*`
+* `video/*`
 * `application/pdf`
 
 

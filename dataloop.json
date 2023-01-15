@@ -75,7 +75,7 @@
           "dtlpy": "1.70.29",
           "verify": false
         },
-        "functions": []
+        "functions": [{}]
       }
     ],
     "services": [
