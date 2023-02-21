@@ -7,10 +7,6 @@ with open('./dataloop.json') as json_file:
     data = json.load(json_file)
     panel_name = data['components']['panels'][0]['name']
 
-print(f'Copying dist to panels/{panel_name}')
-src_dir = 'dist'
-dest_dir = f'panels/{panel_name}'
-shutil.copytree(src=src_dir, dst=dest_dir)
 lines = []
 with open(f'./panels/{panel_name}/index.html', 'r') as html_file:
     for line in html_file.readlines():
