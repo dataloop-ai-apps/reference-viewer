@@ -75,6 +75,7 @@
         "initParams": {},
         "packageName": "default-package",
         "packageRevision": "latest",
+        "secrets": ["00c7bdeb-50ff-443c-bd53-027687cc1232", "0d0631f0-af83-44e4-93f0-787608b97d01"],
         "versions": {
           "dtlpy": "1.74.1"
         },
