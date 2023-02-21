@@ -65,8 +65,7 @@
       }
     ],
     "hooks": [],
-    "modules": [
-    ],
+    "modules": [],
     "services": [
       {
         "name": "aaron-test",
@@ -76,12 +75,15 @@
         "initParams": {},
         "packageName": "default-package",
         "packageRevision": "latest",
+        "versions": {
+          "dtlpy": "1.74.1"
+        },
         "runtime": {
           "podType": "regular-xs",
           "numReplicas": 1,
           "concurrency": 10,
           "pyPackages": {},
-          "runnerImage": "gcr.io/viewo-g/piper/agent/runner/cpu/main:1.70.29.latest",
+          "runnerImage": "gcr.io/viewo-g/piper/agent/runner/cpu/node14:latest",
           "singleAgent": false,
           "autoscaler": {
             "type": "rabbitmq",
