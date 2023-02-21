@@ -10,9 +10,6 @@
     "patch": "./patch.sh"
   },
   "dependencies": {
-    "@dataloop-ai/icons": "^2.0.9",
-    "@dataloop/components": "^0.6.6",
-    "@dataloop/icons": "^1.0.74",
     "pdfjs-dist": "^3.1.81",
     "vue": "^3.2.37"
   },
