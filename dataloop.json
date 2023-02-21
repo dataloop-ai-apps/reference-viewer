@@ -1,8 +1,8 @@
 {
   "id": "2",
-  "version": "1.0.9",
+  "version": "1.0.11",
   "creator": "adva.a@dataloop.ai",
-  "name": "referenceViewer2",
+  "name": "referenceViewerAharon",
   "displayName": "reference-viewer",
   "description": "",
   "icon": "icon-dl-sdk-documentation",
@@ -11,8 +11,8 @@
   ],
   "codebase": {
     "type": "git",
-    "gitUrl": "https://github.com/dataloop-ai-apps/reference-viewer.git",
-    "gitTag": "v1.0.9"
+    "gitUrl": "https://github.com/AharonDL/reference-viewer.git",
+    "gitTag": "v1.0.11"
   },
   "scope": "organization",
   "components": {
@@ -66,27 +66,13 @@
     ],
     "hooks": [],
     "modules": [
-      {
-        "name": "floatingWindow",
-        "entryPoint": "main.py",
-        "mainClass": "ServiceRunner",
-        "initInputs": [],
-        "version": {
-          "dtlpy": "1.70.29",
-          "verify": false
-        },
-        "functions": [
-          {}
-        ]
-      }
     ],
     "services": [
       {
-        "name": "runner81",
+        "name": "aaron-test",
         "panelNames": [
           "referenceViewer"
         ],
-        "moduleName": "floatingWindow",
         "initParams": {},
         "packageName": "default-package",
         "packageRevision": "latest",
