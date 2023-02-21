@@ -10,7 +10,6 @@ with open('./dataloop.json') as json_file:
 print(f'Copying dist to panels/{panel_name}')
 src_dir = 'dist'
 dest_dir = f'panels/{panel_name}'
-files = os.listdir(src_dir)
 shutil.copytree(src=src_dir, dst=dest_dir, dirs_exist_ok=True)
 
 lines = []
