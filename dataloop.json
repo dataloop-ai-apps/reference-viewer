@@ -1,8 +1,8 @@
 {
   "id": "2",
-  "version": "1.0.9",
+  "version": "1.0.11",
   "creator": "adva.a@dataloop.ai",
-  "name": "referenceViewer2",
+  "name": "referenceViewerAharon",
   "displayName": "reference-viewer",
   "description": "",
   "icon": "icon-dl-sdk-documentation",
@@ -11,8 +11,8 @@
   ],
   "codebase": {
     "type": "git",
-    "gitUrl": "https://github.com/dataloop-ai-apps/reference-viewer.git",
-    "gitTag": "v1.0.9"
+    "gitUrl": "https://github.com/AharonDL/reference-viewer.git",
+    "gitTag": "main"
   },
   "scope": "organization",
   "components": {
@@ -65,37 +65,26 @@
       }
     ],
     "hooks": [],
-    "modules": [
-      {
-        "name": "floatingWindow",
-        "entryPoint": "main.py",
-        "mainClass": "ServiceRunner",
-        "initInputs": [],
-        "version": {
-          "dtlpy": "1.70.29",
-          "verify": false
-        },
-        "functions": [
-          {}
-        ]
-      }
-    ],
+    "modules": [],
     "services": [
       {
-        "name": "runner81",
+        "name": "aaron-test",
         "panelNames": [
           "referenceViewer"
         ],
-        "moduleName": "floatingWindow",
         "initParams": {},
         "packageName": "default-package",
         "packageRevision": "latest",
+        "secrets": ["00c7bdeb-50ff-443c-bd53-027687cc1232", "0d0631f0-af83-44e4-93f0-787608b97d01"],
+        "versions": {
+          "dtlpy": "1.74.1"
+        },
         "runtime": {
           "podType": "regular-xs",
           "numReplicas": 1,
           "concurrency": 10,
           "pyPackages": {},
-          "runnerImage": "gcr.io/viewo-g/piper/agent/runner/cpu/main:1.70.29.latest",
+          "runnerImage": "gcr.io/viewo-g/piper/agent/runner/cpu/node14:latest",
           "singleAgent": false,
           "autoscaler": {
             "type": "rabbitmq",
