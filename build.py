@@ -17,7 +17,7 @@ lines = []
 with open(f'./panels/{panel_name}/index.html', 'r') as html_file:
     for line in html_file.readlines():
         if "/assets/" in line:
-            line = line.replace('/assets/', f'../{panel_name}/assets/')
+            line = line.replace('./assets/', f'assets/')
         lines.append(line)
 
 with open(f'./panels/{panel_name}/index.html', 'w') as updated_html_file:

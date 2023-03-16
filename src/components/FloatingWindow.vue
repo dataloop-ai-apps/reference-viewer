@@ -68,7 +68,7 @@ export default {
 		}
 	},
 	mounted() {
-		if (this.typeOfContent === 'video' && !this.width && !this.height) {
+		if (this.typeOfContent.includes('video') && !this.width && !this.height) {
 			const video = document.createElement('video')
 			video.src = this.url
 			video.addEventListener('loadedmetadata', () => {
@@ -76,7 +76,7 @@ export default {
 				this.videoHeight = video.videoHeight + 100
 			})
 		} else if (
-			this.typeOfContent === 'image' &&
+			this.typeOfContent.includes('image') &&
 			!this.width &&
 			!this.height
 		) {
