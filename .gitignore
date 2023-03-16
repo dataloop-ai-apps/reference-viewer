@@ -136,3 +136,8 @@ fabric.properties
 .idea/**/azureSettings.xml
 
 # End of https://www.toptal.com/developers/gitignore/api/webstorm,vue,vuejs
+
+
+build.sh
+patch.sh
+publish.py
