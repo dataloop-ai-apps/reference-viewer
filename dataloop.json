@@ -71,7 +71,7 @@
         "entryPoint": "main.py",
         "mainClass": "ServiceRunner",
         "initInputs": [],
-        "version": {
+        "versions": {
           "dtlpy": "1.70.29",
           "verify": false
         },
