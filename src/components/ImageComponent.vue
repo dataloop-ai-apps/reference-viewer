@@ -1,38 +1,25 @@
 <template>
-  <div
-    v-if="!loading && url.length"
-    class="imageContainer"
-  >
-    <img
-      ref="imgElem"
-      :src="url"
-    >
+  <div v-if="!loading && url.length" class="imageContainer">
+    <img ref="imgElem" :src="url" />
   </div>
-  <div
-    v-if="!url.length"
-    class="content"
-  >
-    No media found
-  </div>
+  <div v-if="!url.length" class="content">No media found</div>
 </template>
 
-<script>
-
-export default {
-  name: 'ImageComponent',
-  props: [
-    'setIsOpen',
-    'isBlackTheme',
-    'url',
-    'loading',
-    'top',
-    'right',
-    'width',
-    'height',
-    'imgWidth',
-    'imgHeight',
-  ],
-}
+<script setup lang="ts">
+/* eslint-disable */
+defineProps([
+  'setIsOpen',
+  'isBlackTheme',
+  'url',
+  'loading',
+  'top',
+  'right',
+  'width',
+  'height',
+  'imgWidth',
+  'imgHeight',
+])
+/* eslint-enable */
 </script>
 
 <style lang="scss">
