@@ -1,10 +1,11 @@
 import { defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
+import eslintPlugin from 'vite-plugin-eslint'
 import viteBasicSslPlugin from '@vitejs/plugin-basic-ssl'
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  base: "",
+  base: '',
   server: {
     port: 3002,
     https: true,
@@ -17,5 +18,5 @@ export default defineConfig({
       },
     },
   },
-  plugins: [vue(), viteBasicSslPlugin()],
+  plugins: [vue(), eslintPlugin(), viteBasicSslPlugin()],
 })
