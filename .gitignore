@@ -21,6 +21,7 @@ dist/
 .DS_Store
 npm-debug.log
 yarn-error.log
+package-lock.json
 
 ### WebStorm ###
 # Covers JetBrains IDEs: IntelliJ, RubyMine, PhpStorm, AppCode, PyCharm, CLion, Android Studio, WebStorm and Rider
