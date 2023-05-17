@@ -28,7 +28,11 @@
       :img-width="imgWidth"
       :img-height="imgHeight"
     />
-    <PDFComponent v-else-if="typeOfContent.includes('pdf')" :url="url" />
+    <PDFComponent
+      v-else-if="typeOfContent.includes('pdf')"
+      :url="url"
+      :loading="loading"
+    />
   </div>
 </template>
 

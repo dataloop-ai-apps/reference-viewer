@@ -1,22 +1,18 @@
 <template>
-  <iframe
-    id="pdf-js-viewer"
-    title="webviewer"
-    frameborder="0"
-    :src="`/pdfjs-3.6.172-dist/web/viewer.html?file=${url}`"
-    :width="width"
-    :height="height"
-  ></iframe>
+  <PDFViewer v-if="!loading && url.length" :url="url" />
+  <div v-if="!url.length" class="content">No media found</div>
 </template>
 
 <script setup lang="ts">
 import { ref, onMounted, onBeforeUnmount } from 'vue'
+import PDFViewer from './PDFViewer/PDFViewer.vue'
 
 defineProps({
   url: {
     type: String,
     required: true,
   },
+  loading: Boolean,
 })
 
 const width = ref(window.innerWidth)
