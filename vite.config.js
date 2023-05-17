@@ -1,7 +1,10 @@
 import { defineConfig } from 'vite'
-import vue from '@vitejs/plugin-vue'
+import Vue from '@vitejs/plugin-vue'
 import eslintPlugin from 'vite-plugin-eslint'
 import viteBasicSslPlugin from '@vitejs/plugin-basic-ssl'
+import Icons from 'unplugin-icons/vite'
+import IconsResolver from 'unplugin-icons/resolver'
+import Components from 'unplugin-vue-components/vite'
 
 // https://vitejs.dev/config/
 export default defineConfig({
@@ -18,5 +21,11 @@ export default defineConfig({
       },
     },
   },
-  plugins: [vue(), eslintPlugin(), viteBasicSslPlugin()],
+  plugins: [
+    Vue(),
+    eslintPlugin(),
+    viteBasicSslPlugin(),
+    Components({ resolvers: [IconsResolver()] }),
+    Icons(),
+  ],
 })
