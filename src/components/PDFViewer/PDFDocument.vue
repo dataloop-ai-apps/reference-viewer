@@ -9,7 +9,7 @@
         :class="{ opacity: +showSidebar }"
       />
     </Suspense>
-    <div class="relative box-content">
+    <div class="relative">
       <div id="viewerContainer" ref="containerRef">
         <div id="viewer" class="pdfViewer"></div>
       </div>
@@ -76,8 +76,6 @@ onMounted(() => {
     linkService: pdfLinkService,
     findController: pdfFindController,
   })
-  pdfViewer.value.container = containerRef.value
-
   toRaw(pdfLinkService).setViewer(toRaw(pdfViewer.value))
 
   eventBus.on('pagesinit', () => {

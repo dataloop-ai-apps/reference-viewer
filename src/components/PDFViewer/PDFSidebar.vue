@@ -1,5 +1,4 @@
 <template>
-  <!-- <div id="thumb" ref="thumbsRef"></div> -->
   <aside ref="sidebarRef" class="pdf__sidebar bg-[#f9fbfc] overflow-auto">
     <div class="w-32 p-2 space-y-1">
       <button

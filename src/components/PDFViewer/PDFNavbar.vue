@@ -198,11 +198,7 @@
 </template>
 
 <script setup lang="ts">
-import type {
-  EventBus,
-  PDFFindController,
-  PDFLinkService,
-} from 'pdfjs-dist/web/pdf_viewer'
+import type { EventBus, PDFLinkService } from 'pdfjs-dist/web/pdf_viewer'
 import {
   computed,
   inject,
@@ -237,7 +233,7 @@ const props = defineProps({
     required: true,
     default: 1,
     validator: (value: number) => {
-      return value > 0.1 && value < 10
+      return value >= 0.1 && value <= 10
     },
   },
 })

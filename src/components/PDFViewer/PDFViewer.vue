@@ -9,8 +9,8 @@
       @on-toggle-sidebar="toggleSidebar"
       @on-page-prev="toRaw(pdfViewer)?.previousPage()"
       @on-page-next="toRaw(pdfViewer)?.nextPage()"
-      @on-zoom-in="zoomIn"
-      @on-zoom-out="zoomOut"
+      @on-zoom-in="toRaw(pdfViewer)?.increaseScale()"
+      @on-zoom-out="toRaw(pdfViewer)?.decreaseScale()"
       @on-page-scale-change="setPageScale"
     />
     <PDFDocument
@@ -64,18 +64,6 @@ const setPageScale = (fit: string) => {
   pageScaleValue.value = fit
 }
 
-const zoomIn = () => {
-  if (!pdfViewer.value.currentScaleValue)
-    toRaw(pdfViewer.value).currentScaleValue = 'page-width'
-  toRaw(pdfViewer.value)?.increaseScale()
-}
-
-const zoomOut = () => {
-  if (!pdfViewer.value.currentScaleValue)
-    toRaw(pdfViewer.value).currentScaleValue = 'page-width'
-  toRaw(pdfViewer.value)?.decreaseScale()
-}
-
 const eventBus = new EventBus()
 const pdfLinkService = new PDFLinkService({ eventBus })
 const pdfFindController = new PDFFindController({
@@ -95,12 +83,12 @@ onMounted(async () => {
     cMapPacked: true,
     enableXfa: true,
   })
-  loadingTask.promise.then(function (pdfDoc: PDFDocumentProxy) {
-    pdf.value = pdfDoc
 
-    eventBus.on('scalechanging', ({ scale }) => {
-      pageZoom.value = scale
-    })
+  const pdfDocument = await loadingTask.promise
+  pdf.value = pdfDocument
+
+  eventBus.on('scalechanging', ({ scale }) => {
+    pageZoom.value = scale
   })
 })
 
