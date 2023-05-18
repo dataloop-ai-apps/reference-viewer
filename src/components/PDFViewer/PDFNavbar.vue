@@ -14,13 +14,15 @@
 
       <div class="flex items-center">
         <button
-          class="p-1 rounded transition-all duration-75 ease-in hover:bg-gray-200 active:scale-90 text-gray-500"
+          class="p-1 rounded transition-all duration-75 ease-in hover:bg-gray-200 enabled:active:scale-90 text-gray-500 disabled:opacity-75 disabled:cursor-default"
+          :disabled="inputValue === 1"
           @click="$emit('on-page-prev')"
         >
           <i-carbon-chevron-up class="w-5 h-5" />
         </button>
         <button
-          class="p-1 rounded transition-all duration-75 ease-in hover:bg-gray-200 active:scale-90 text-gray-500"
+          class="p-1 rounded transition-all duration-75 ease-in hover:bg-gray-200 enabled:active:scale-90 text-gray-500 disabled:opacity-75 disabled:cursor-default"
+          :disabled="inputValue === numPages"
           @click="$emit('on-page-next')"
         >
           <i-carbon-chevron-down class="w-5 h-5" />
@@ -43,7 +45,7 @@
 
       <div class="flex items-center ml-2 gap-1">
         <button
-          class="p-1 rounded transition-all duration-75 ease-in hover:bg-gray-200 active:scale-90 text-gray-500 disabled:opacity-75 disabled:pointer-events-none"
+          class="p-1 rounded transition-all duration-75 ease-in hover:bg-gray-200 enabled:active:scale-90 text-gray-500 disabled:opacity-75 disabled:cursor-default"
           :disabled="pageZoom === MIN_SCALE"
           @click="emit('on-zoom-out')"
         >
@@ -51,7 +53,7 @@
         </button>
 
         <button
-          class="p-1 rounded transition-all duration-75 ease-in hover:bg-gray-200 active:scale-90 text-gray-500 disabled:opacity-75 disabled:pointer-events-none"
+          class="p-1 rounded transition-all duration-75 ease-in hover:bg-gray-200 enabled:active:scale-90 text-gray-500 disabled:opacity-75 disabled:cursor-default"
           :disabled="pageZoom === MAX_SCALE"
           @click="emit('on-zoom-in')"
         >
