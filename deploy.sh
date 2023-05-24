@@ -3,5 +3,6 @@
 rm -r ./dist ./panels
 npm i
 npm run build
-python3 ./build.py
+mkdir -p ./panels/referenceViewer
+cp -r ./dist/. ./panels/referenceViewer
 rm -r ./dist
