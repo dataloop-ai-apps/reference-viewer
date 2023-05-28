@@ -1,5 +1,5 @@
 <template>
-  <div class="relative flex flex-col h-screen">
+  <div id="pdf-document" class="relative flex flex-col h-screen">
     <PDFNavbar
       :title="getFilenameFromUrl(url)"
       :num-pages="pdf?.numPages"
