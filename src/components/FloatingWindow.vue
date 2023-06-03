@@ -35,6 +35,12 @@
             :url="url"
             :loading="loading"
         />
+        <AudioComponent
+            v-else-if="
+                typeOfContent.includes('audio') && !loading && url.length
+            "
+            :url="url"
+        />
     </div>
 </template>
 
