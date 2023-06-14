@@ -59,7 +59,7 @@
     "modules": [],
     "services": [
       {
-        "name": "runner81",
+        "name": "dataloop-reference-viewer-runner",
         "panelNames": [
           "referenceViewer"
         ],
