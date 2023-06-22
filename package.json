@@ -11,8 +11,7 @@
   },
   "dependencies": {
     "@dataloop-ai/icons": "^2.0.9",
-    "@dataloop/components": "^0.6.6",
-    "@dataloop/icons": "^1.0.74",
+    "@dataloop-ai/components": "^0.17.101",
     "vue": "^3.2.37"
   },
   "devDependencies": {
