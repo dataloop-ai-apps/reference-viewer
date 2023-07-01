@@ -64,7 +64,7 @@
                     "referenceViewer"
                 ],
                 "versions": {
-                    "dtlpy": "1.75.3"
+                    "dtlpy": "1.79.14"
                 },
                 "initParams": {},
                 "packageName": "default-package",
