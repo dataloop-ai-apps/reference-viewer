@@ -1,9 +1,13 @@
 {
   "id": "2",
-  "version": ""version": ""version": "1.0.29",
-"gitTag": "v1.0.29""
-"gitTag": "v"version": "1.0.29",
-"gitTag": "v1.0.29""",
+  "version": ""version": ""version": "["version": "1.0.30",
+"gitTag": "v1.0.30"]",
+"gitTag": "v["version": "1.0.30",
+"gitTag": "v1.0.30"]""
+"gitTag": "v"version": "["version": "1.0.30",
+"gitTag": "v1.0.30"]",
+"gitTag": "v["version": "1.0.30",
+"gitTag": "v1.0.30"]""",
   "creator": "adva.a@dataloop.ai",
   "name": "dataloopReferenceViewer",
   "displayName": "dataloop-reference-viewer",
@@ -15,10 +19,14 @@
   "codebase": {
     "type": "git",
     "gitUrl": "https://github.com/dataloop-ai-apps/reference-viewer.git",
-    "gitTag": "v"version": ""version": "1.0.29",
-"gitTag": "v1.0.29""
-"gitTag": "v"version": "1.0.29",
-"gitTag": "v1.0.29"""
+    "gitTag": "v"version": ""version": "["version": "1.0.30",
+"gitTag": "v1.0.30"]",
+"gitTag": "v["version": "1.0.30",
+"gitTag": "v1.0.30"]""
+"gitTag": "v"version": "["version": "1.0.30",
+"gitTag": "v1.0.30"]",
+"gitTag": "v["version": "1.0.30",
+"gitTag": "v1.0.30"]"""
   },
   "scope": "public",
   "components": {
