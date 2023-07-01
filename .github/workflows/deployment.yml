@@ -16,6 +16,7 @@ jobs:
        uses: actions/checkout@v2
      - name: Install dependencies and build
        run: |
+         pip3 install dtlpy --upgrade
          npm i
          npm run build
      - name: Create valid app structure
