@@ -1,114 +1,100 @@
 {
-  "id": "2",
-  "version": ""version": ""version": "["version": "1.0.30",
-"gitTag": "v1.0.30"]",
-"gitTag": "v["version": "1.0.30",
-"gitTag": "v1.0.30"]""
-"gitTag": "v"version": "["version": "1.0.30",
-"gitTag": "v1.0.30"]",
-"gitTag": "v["version": "1.0.30",
-"gitTag": "v1.0.30"]""",
-  "creator": "adva.a@dataloop.ai",
-  "name": "dataloopReferenceViewer",
-  "displayName": "dataloop-reference-viewer",
-  "description": "",
-  "icon": "icon-dl-sdk-documentation",
-  "categories": [
-    "referenceViewer"
-  ],
-  "codebase": {
-    "type": "git",
-    "gitUrl": "https://github.com/dataloop-ai-apps/reference-viewer.git",
-    "gitTag": "v"version": ""version": "["version": "1.0.30",
-"gitTag": "v1.0.30"]",
-"gitTag": "v["version": "1.0.30",
-"gitTag": "v1.0.30"]""
-"gitTag": "v"version": "["version": "1.0.30",
-"gitTag": "v1.0.30"]",
-"gitTag": "v["version": "1.0.30",
-"gitTag": "v1.0.30"]"""
-  },
-  "scope": "public",
-  "components": {
-    "panels": [
-      {
-        "name": "referenceViewer",
-        "minRole": "annotator",
-        "supportedSlots": [
-          {
-            "type": "floatingWindow",
-            "configuration": {
-              "layout": {
-                "width": 455,
-                "height": 340,
-                "resizable": true,
-                "backgroundColor": "dl-color-studio-panel"
-              },
-              "route": [
-                "datasetItem"
-              ]
-            }
-          }
-        ],
-        "icon": "icon-dl-sdk-documentation",
-        "metadata": {},
-        "defaultSettings": {},
-        "conditions": {
-          "resources": [
+    "id": "2",
+    "version": "1.0.29",
+    "creator": "adva.a@dataloop.ai",
+    "name": "dataloopReferenceViewer",
+    "displayName": "dataloop-reference-viewer",
+    "description": "",
+    "icon": "icon-dl-sdk-documentation",
+    "categories": [
+        "referenceViewer"
+    ],
+    "codebase": {
+        "type": "git",
+        "gitUrl": "https://github.com/dataloop-ai-apps/reference-viewer.git",
+        "gitTag": "v1.0.29"
+    },
+    "scope": "public",
+    "components": {
+        "panels": [
             {
-              "entityType": "item",
-              "filter": {
-                "$and": [
-                  {
-                    "metadata.system.modalities.type": "preview"
-                  }
-                ]
-              }
+                "name": "referenceViewer",
+                "minRole": "annotator",
+                "supportedSlots": [
+                    {
+                        "type": "floatingWindow",
+                        "configuration": {
+                            "layout": {
+                                "width": 455,
+                                "height": 340,
+                                "resizable": true,
+                                "backgroundColor": "dl-color-studio-panel"
+                            },
+                            "route": [
+                                "datasetItem"
+                            ]
+                        }
+                    }
+                ],
+                "icon": "icon-dl-sdk-documentation",
+                "metadata": {},
+                "defaultSettings": {},
+                "conditions": {
+                    "resources": [
+                        {
+                            "entityType": "item",
+                            "filter": {
+                                "$and": [
+                                    {
+                                        "metadata.system.modalities.type": "preview"
+                                    }
+                                ]
+                            }
+                        }
+                    ]
+                }
             }
-          ]
-        }
-      }
-    ],
-    "toolbars": [],
-    "modules": [],
-    "services": [
-      {
-        "name": "dataloop-reference-viewer-runner",
-        "panelNames": [
-          "referenceViewer"
         ],
-        "versions": {
-          "dtlpy": "1.75.3"
-        },
-        "initParams": {},
-        "packageName": "default-package",
-        "packageRevision": "latest",
-        "runtime": {
-          "podType": "regular-xs",
-          "numReplicas": 1,
-          "concurrency": 10,
-          "pyPackages": {},
-          "runnerImage": "gcr.io/viewo-g/piper/agent/runner/cpu/node16:latest",
-          "singleAgent": false,
-          "autoscaler": {
-            "type": "rabbitmq",
-            "minReplicas": 1,
-            "maxReplicas": 2,
-            "queueLength": 10
-          },
-          "preemptible": false,
-          "executionTimeout": 3600,
-          "drainTime": 600,
-          "onReset": "failed",
-          "runExecutionAsProcess": false
-        },
-        "maxAttempts": 3
-      }
-    ],
-    "triggers": [],
-    "pipelines": [],
-    "models": [],
-    "snapshots": []
-  },
-  "trusted": true
+        "toolbars": [],
+        "modules": [],
+        "services": [
+            {
+                "name": "dataloop-reference-viewer-runner",
+                "panelNames": [
+                    "referenceViewer"
+                ],
+                "versions": {
+                    "dtlpy": "1.75.3"
+                },
+                "initParams": {},
+                "packageName": "default-package",
+                "packageRevision": "latest",
+                "runtime": {
+                    "podType": "regular-xs",
+                    "numReplicas": 1,
+                    "concurrency": 10,
+                    "pyPackages": {},
+                    "runnerImage": "gcr.io/viewo-g/piper/agent/runner/cpu/node16:latest",
+                    "singleAgent": false,
+                    "autoscaler": {
+                        "type": "rabbitmq",
+                        "minReplicas": 1,
+                        "maxReplicas": 2,
+                        "queueLength": 10
+                    },
+                    "preemptible": false,
+                    "executionTimeout": 3600,
+                    "drainTime": 600,
+                    "onReset": "failed",
+                    "runExecutionAsProcess": false
+                },
+                "maxAttempts": 3
+            }
+        ],
+        "triggers": [],
+        "pipelines": [],
+        "models": [],
+        "snapshots": []
+    },
+    "trusted": true
 }
