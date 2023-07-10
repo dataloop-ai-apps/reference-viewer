@@ -14,7 +14,7 @@ project = dl.projects.get(project_id=project_id)  # DataloopApps
 print(f'publishing to project: {project.name}')
 
 # publish dpk to app store
-dpk = project.dpks.publish()
+dpk = dl.dpks.publish()
 print(f'published successfully! dpk name: {dpk.name}, dpk id: {dpk.id}')
 
 try:
