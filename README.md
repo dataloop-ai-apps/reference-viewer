@@ -17,16 +17,6 @@ The Reference Viewer application enables annotators to view other items in a dra
 * `application/pdf`
 
 
-## Setup
-* In order to continue, you need to install our &nbsp;🚀 &nbsp;[Python SDK](https://github.com/dataloop-ai/dtlpy) and use our [CLI](https://sdk-docs.dataloop.ai/en/latest/cli.html).
-
-## Installation
-* Clone the repository -  `git clone https://github.com/dataloop-ai-apps/reference-viewer.git`
-* Navigate to the repository - `cd reference-viewer`
-* Publish the app -  `dlp app publish --project-name <PROJECT_NAME>`
-**Note:** After you Publish the app, you will get the `<DPK ID>` you will need for the next command.
-* Install - `dlp app install --dpk-id <DPK ID> --project-name <PROJECT_NAME>`
-
 ## Application Usage in the Dataloop Platform
 To use the Reference Viewer in an item, add a modality of type "preview" as follows:
 ``` json

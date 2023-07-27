@@ -1,6 +1,6 @@
 {
     "id": "2",
-    "version": "1.0.32",
+    "version": "1.0.34",
     "creator": "adva.a@dataloop.ai",
     "name": "dataloopReferenceViewer",
     "displayName": "dataloop-reference-viewer",
@@ -14,7 +14,7 @@
         "gitUrl": "https://github.com/dataloop-ai-apps/reference-viewer.git",
         "gitTag": "v1.0.32"
     },
-    "scope": "public",
+    "scope": "system",
     "components": {
         "panels": [
             {
