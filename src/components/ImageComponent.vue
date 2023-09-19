@@ -59,7 +59,7 @@ const handleWheel = (e: WheelEvent) => {
     const xs = (e.clientX - coords.x) / coords.scale
     const ys = (e.clientY - coords.y) / coords.scale
 
-    e.deltaY > 0 ? (coords.scale *= 1.2) : (coords.scale /= 1.2)
+    e.deltaY < 0 ? (coords.scale *= 1.2) : (coords.scale /= 1.2)
 
     coords.x = e.clientX - xs * coords.scale
     coords.y = e.clientY - ys * coords.scale
