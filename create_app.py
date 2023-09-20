@@ -10,10 +10,6 @@ PANEL_NAME = 'referenceViewer'
 
 
 def bump(bump_type):
-    dst_dir = os.path.join('panels', PANEL_NAME)
-    if os.path.isdir(dst_dir):
-        print(f'Panels dir exists: {dst_dir}... Deleting')
-        shutil.rmtree(dst_dir)
     with os.popen(f'npm version {bump_type} --no-git-tag-version --tag-version-prefix=""') as f:
         version = f.read().strip()
     print(f'Building panel name: {PANEL_NAME}, version: {version}')
