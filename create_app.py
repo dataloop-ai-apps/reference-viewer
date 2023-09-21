@@ -118,5 +118,4 @@ if __name__ == "__main__":
         bump(bump_type=args.bump_type)
 
     if args.publish is True:
-        build()
         publish_and_install(project_id=args.project)
