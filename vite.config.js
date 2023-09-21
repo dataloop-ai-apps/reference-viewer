@@ -21,6 +21,10 @@ export default defineConfig({
       },
     },
   },
+  optimizeDeps: {
+    include: ['lodash', 'pdfjs-dist', 'highlight.js'],
+    exclude: ['node_modules', './node_modules', 'dist', './dist']
+  },
   plugins: [
     Vue(),
     viteBasicSslPlugin(),
