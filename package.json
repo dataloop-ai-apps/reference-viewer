@@ -1,7 +1,7 @@
 {
   "name": "floating-window",
   "private": true,
-  "version": "1.0.38",
+  "version": "1.0.39",
   "type": "module",
   "scripts": {
     "dev": "vite",
@@ -12,7 +12,8 @@
   "dependencies": {
     "@dataloop-ai/icons": "^2.0.9",
     "@dataloop-ai/components": "^0.17.101",
-    "vue": "^3.2.37"
+    "vue": "^3.2.37",
+    "pdfjs-dist": "^3.6.172"
   },
   "devDependencies": {
     "@iconify/json": "^2.2.62",
@@ -29,7 +30,6 @@
     "eslint-plugin-member-order": "^0.0.3",
     "eslint-plugin-prettier": "^4.2.1",
     "eslint-plugin-vue": "^9.14.1",
-    "pdfjs-dist": "^3.6.172",
     "postcss": "^8.4.23",
     "postcss-html": "^1.5.0",
     "sass": "^1.57.1",
