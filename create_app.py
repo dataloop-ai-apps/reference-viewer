@@ -59,7 +59,7 @@ def publish_and_install(project_id):
         print(f'published successfully! dpk name: {dpk.name}, version: {dpk.version}, dpk id: {dpk.id}')
 
         try:
-            app = project.apps.get(app_name=dpk.name)
+            app = project.apps.get(app_name=dpk.display_name)
             print(f'already installed, updating...')
             app.dpk_version = dpk.version
             app.update()
@@ -67,7 +67,7 @@ def publish_and_install(project_id):
         except dl.exceptions.NotFound:
             print(f'installing ..')
 
-            app = project.apps.install(dpk=dpk, app_name=dpk.name)
+            app = project.apps.install(dpk=dpk, app_name=dpk.display_name)
             print(f'installed! app id: {app.id}')
 
         print(f'Done!')
