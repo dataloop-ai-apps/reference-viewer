@@ -24,7 +24,7 @@ jobs:
   bump-version:
     runs-on: ubuntu-latest
     container:
-      image: docker.io/dataloopai/py3.8.node16:1.81.4
+      image: docker.io/dataloopai/py3.8.node16:1.84.12
       options: --user 1001
     steps:
       - name: Checkout code

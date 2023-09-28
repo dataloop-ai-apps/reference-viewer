@@ -16,7 +16,7 @@ jobs:
   publish-and-install:
     runs-on: ubuntu-latest
     container:
-      image: docker.io/dataloopai/py3.8.node16:1.74.14
+      image: docker.io/dataloopai/py3.8.node16:1.84.12
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
@@ -32,6 +32,8 @@ jobs:
         shell: bash
       - name: Publish & Install RC
         if: "inputs.env == 'rc'"
+        env:
+          SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK_RC }}
         run: |
           dlp api setenv --env ${{ inputs.env }}
           echo "Publishing to RC"

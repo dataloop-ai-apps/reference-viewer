@@ -19,6 +19,10 @@ def bump(bump_type):
     subprocess.check_output('git push', shell=True)
     subprocess.check_output(f'bumpversion --new-version {version} --allow-dirty dummy-part', shell=True)
     subprocess.check_output('git push --follow-tags', shell=True)
+    subprocess.check_output('auto-changelog', shell=True)
+    subprocess.check_output('git add .', shell=True)
+    subprocess.check_output(f'git commit -am "Changelog: v{version}"', shell=True)
+    subprocess.check_output('git push', shell=True)
 
 
 def build():
@@ -81,6 +85,8 @@ def publish_and_install(project_id):
         msg = f"""{status_msg}
         *App*: `{app_name}:{app_version}` => *{env}* by {user}
         """
+        release_notes = changelog()
+        release_notes = release_notes.replace('Unreleased', app_version)
         webhook = os.environ.get('SLACK_WEBHOOK')
         if webhook is None:
             print('WARNING: SLACK_WEBHOOK is None, cannot report')
@@ -94,6 +100,13 @@ def publish_and_install(project_id):
                                              "text": {
                                                  "type": "mrkdwn",
                                                  "text": msg
+                                             }
+                                         },
+                                         {
+                                             "type": "section",
+                                             "text": {
+                                                 "type": "mrkdwn",
+                                                 "text": release_notes
                                              }
                                          }
 
