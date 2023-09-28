@@ -115,6 +115,25 @@ def publish_and_install(project_id):
             print(resp)
 
 
+def changelog():
+    with open('CHANGELOG.md') as f:
+        markdown_content = f.read()
+
+    # Regular expression to extract content between the desired versions
+    pattern = rf'\[Unreleased](.*?)(?=##)'
+
+    # Find the match for the desired content
+    match = re.search(pattern, markdown_content, re.DOTALL)
+
+    # Extract the content
+    if match:
+        version_content = match.group(0).strip()
+    else:
+        version_content = "Content not found between versions."
+    print(version_content)
+    return version_content
+
+
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description='Build, Bump, Publish and Install')
     parser.add_argument('--tag', action='store_true', help='Create a version git tag')
