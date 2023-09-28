@@ -4,6 +4,7 @@ import requests
 import shutil
 import json
 import os
+import re
 import dtlpy as dl
 
 PANEL_NAME = 'referenceViewer'
