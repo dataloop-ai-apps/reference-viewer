@@ -2,8 +2,8 @@
     "id": "2",
     "version": "1.0.40",
     "creator": "adva.a@dataloop.ai",
-    "name": "dataloopReferenceViewer",
-    "displayName": "dataloop-reference-viewer",
+    "name": "reference-viewer",
+    "displayName": "Reference Viewer",
     "description": "",
     "icon": "icon-dl-sdk-documentation",
     "categories": [
