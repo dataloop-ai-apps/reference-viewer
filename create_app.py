@@ -55,7 +55,7 @@ def publish_and_install(project_id):
             raise ValueError("Must input project_id to publish and install")
         print(f'Deploying to env : {dl.environment()}')
 
-        project = dl.projects.get(project_id=project_id)  # DataloopApps
+        project = dl.projects.get(project_id=project_id)
 
         print(f'publishing to project: {project.name}')
 
