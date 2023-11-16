@@ -16,7 +16,7 @@ jobs:
   publish-and-install:
     runs-on: ubuntu-latest
     container:
-      image: docker.io/dataloopai/py3.8.node16:1.84.12
+      image: docker.io/dataloopai/py3.8.node18:1.84.12
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
