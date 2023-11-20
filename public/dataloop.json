@@ -12,7 +12,11 @@
 								"width": 455,
 								"height": 340,
 								"resizeable": true,
-								"backgroundColor": "dl-color-studio-panel"
+								"backgroundColor": "dl-color-studio-panel",
+								"position": {
+									"x": 775,
+									"y": 55
+								}
 							}
 						}
 					}
