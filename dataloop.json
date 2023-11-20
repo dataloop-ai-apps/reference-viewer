@@ -30,9 +30,9 @@
                                 "resizable": true,
                                 "backgroundColor": "dl-color-studio-panel",
                                 "position": {
-									"x": 775,
-									"y": 55
-								}
+				    "x": 775,
+				    "y": 55
+				}
                             },
                             "route": [
                                 "datasetItem"
