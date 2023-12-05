@@ -13,7 +13,7 @@
     "@dataloop-ai/icons": "^2.0.9",
     "@dataloop-ai/components": "^0.17.101",
     "vue": "^3.2.37",
-    "pdfjs-dist": "^3.11.174"
+    "pdfjs-dist": "~3.6.172"
   },
   "devDependencies": {
     "@iconify/json": "^2.2.62",
