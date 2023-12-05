@@ -30,16 +30,11 @@
 
 <script setup lang="ts">
 import { onMounted, provide, ref, toRaw } from 'vue'
+import * as pdfjs from 'pdfjs-dist';
+import { PDFDocumentProxy, getFilenameFromUrl } from 'pdfjs-dist';
+import { PDFViewer, EventBus, PDFLinkService, PDFFindController } from 'pdfjs-dist/web/pdf_viewer';
 
-import * as pdfjs from 'pdfjs-dist'
-import { type PDFDocumentProxy, getFilenameFromUrl } from 'pdfjs-dist'
-
-import {
-  type PDFViewer,
-  EventBus,
-  PDFLinkService,
-  PDFFindController,
-} from 'pdfjs-dist/web/pdf_viewer'
+pdfjs.GlobalWorkerOptions.workerSrc = `https://unpkg.com/pdfjs-dist@${pdfjs.version}/build/pdf.worker.min.js`;
 
 const props = defineProps({
   url: {
@@ -48,7 +43,6 @@ const props = defineProps({
   },
 })
 
-pdfjs.GlobalWorkerOptions.workerSrc = `//unpkg.com/pdfjs-dist@${pdfjs.version}/build/pdf.worker.min.js`
 
 const pageScaleValue = ref('page-width')
 const pageZoom = ref(1)
