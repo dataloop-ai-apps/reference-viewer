@@ -140,7 +140,7 @@ if __name__ == "__main__":
     parser.add_argument('--tag', action='store_true', help='Create a version git tag')
     parser.add_argument('--publish', action='store_true', help='Publish DPK and install app')
 
-    parser.add_argument('--project', default='',help='Project to publish and install to')
+    parser.add_argument('--project', default='80138ed5-169a-4be1-9603-b5e13832e55d',help='Project to publish and install to')
     parser.add_argument('--bump-type', default='patch', help='Bump version type: "patch"/"prerelease"/"minor"/"major"')
     args = parser.parse_args()
 

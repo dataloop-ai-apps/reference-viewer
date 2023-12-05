@@ -31,4 +31,16 @@ export default defineConfig({
     Components({ resolvers: [IconsResolver()] }),
     Icons(),
   ],
+  build: {
+    // other build options
+    rollupOptions: {
+      output: {
+        manualChunks: {
+          vendor: ['vue', 'pdfjs-dist'],
+          // other chunk definitions
+        },
+      },
+    },
+  },
 })
+
