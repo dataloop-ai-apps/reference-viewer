@@ -143,7 +143,7 @@ if __name__ == "__main__":
     parser.add_argument('--project', default='80138ed5-169a-4be1-9603-b5e13832e55d',help='Project to publish and install to')
     parser.add_argument('--bump-type', default='patch', help='Bump version type: "patch"/"prerelease"/"minor"/"major"')
     args = parser.parse_args()
-
+    dl.setenv('ford')
     if args.tag is True:
         # run build also here to check it works before creating the git tag
         build()
