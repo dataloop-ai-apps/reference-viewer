@@ -41,6 +41,10 @@
             "
             :url="url"
         />
+        <TextComponent
+            v-else-if="typeOfContent.includes('text') && !loading && url.length"
+            :url="url"
+        />
     </div>
 </template>
 
