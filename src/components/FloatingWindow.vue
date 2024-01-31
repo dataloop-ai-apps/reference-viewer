@@ -45,6 +45,12 @@
             v-else-if="typeOfContent.includes('text') && !loading && url.length"
             :url="url"
         />
+        <MarkdownComponent
+            v-else-if="
+                typeOfContent.includes('markdown') && !loading && url.length
+            "
+            :url="url"
+        />
     </div>
 </template>
 
