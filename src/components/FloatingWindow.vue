@@ -41,66 +41,71 @@
             "
             :url="url"
         />
-        <TextComponent
-            v-else-if="typeOfContent.includes('text') && !loading && url.length"
-            :url="url"
-        />
-        <MarkdownComponent
+        <TypographyComponent
             v-else-if="
-                typeOfContent.includes('markdown') && !loading && url.length
+                (typeOfContent.includes('markdown') ||
+                    typeOfContent.includes('txt')) &&
+                !loading &&
+                url.length
             "
             :url="url"
         />
     </div>
 </template>
 
-<script setup lang="ts">
-import { ref, onMounted } from 'vue'
+<script lang="ts">
+import { defineComponent } from 'vue'
+
 import VideoComponent from './VideoComponent.vue'
 import ImageComponent from './ImageComponent.vue'
 import PDFComponent from './PDFComponent.vue'
+import TypographyComponent from './TypographyComponent.vue'
 
-const props = defineProps([
-    'setIsOpen',
-    'loading',
-    'isBlackTheme',
-    'url',
-    'top',
-    'right',
-    'type',
-    'typeOfContent',
-    'width',
-    'height'
-])
-
-const imgWidth = ref(null)
-const imgHeight = ref(null)
-const videoWidth = ref(null)
-const videoHeight = ref(null)
-
-onMounted(() => {
-    if (
-        props.typeOfContent.includes('video') &&
-        !props.width &&
-        !props.height
-    ) {
-        const video = document.createElement('video')
-        video.addEventListener('loadedmetadata', () => {
-            videoWidth.value = video.videoWidth
-            videoHeight.value = video.videoHeight + 100
-        })
-        video.src = props.url
-    } else if (
-        props.typeOfContent.includes('image') &&
-        !props.width &&
-        !props.height
-    ) {
-        const img = new Image()
-        img.onload = () => {
-            imgWidth.value = img.naturalWidth
-            imgHeight.value = img.naturalHeight
+export default defineComponent({
+    props: [
+        'setIsOpen',
+        'loading',
+        'isBlackTheme',
+        'url',
+        'top',
+        'right',
+        'type',
+        'typeOfContent',
+        'width',
+        'height'
+    ],
+    data() {
+        return {
+            imgWidth: null,
+            imgHeight: null,
+            videoWidth: null,
+            videoHeight: null
         }
-        img.src = props.url
+    },
+    mounted() {
+        if (
+            this.typeOfContent.includes('video') &&
+            !this.width &&
+            !this.height
+        ) {
+            const video = document.createElement('video')
+            video.addEventListener('loadedmetadata', () => {
+                this.videoWidth.value = video.videoWidth
+                this.videoHeight.value = video.videoHeight + 100
+            })
+            video.src = this.url
+        } else if (
+            this.typeOfContent.includes('image') &&
+            !this.width &&
+            !this.height
+        ) {
+            const img = new Image()
+            img.onload = () => {
+                this.imgWidth.value = img.naturalWidth
+                this.imgHeight.value = img.naturalHeight
+            }
+            img.src = this.url
+        }
     }
 })
 </script>
