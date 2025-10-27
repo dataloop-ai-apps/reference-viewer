@@ -10,7 +10,7 @@
     "codebase": {
         "type": "git",
         "gitUrl": "https://github.com/dataloop-ai-apps/reference-viewer.git",
-        "gitTag": "v1.0.59"
+        "gitTag": "1.0.59"
     },
     "scope": "system",
     "components": {
