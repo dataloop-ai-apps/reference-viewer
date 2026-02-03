@@ -34,13 +34,15 @@
       </div>
       <div class="row">
         <div class="wrap">
-          <button
+          <dl-button
             id="btnReplay"
-            :class="{ active: isActive }"
-            class="icon-dl-replay btnReplay"
+            :disabled="!isActive"
+            flat
+            icon="icon-dl-replay"
             @click="replayVideo()"
+            size="m"
           />
-          <span @click="changeSpeed()">x{{ speedValue }}</span>
+          <span style="color: var(--dell-gray-900);" @click="changeSpeed()">x{{ speedValue }}</span>
         </div>
         <div class="buttons">
           <button id="btnStart" class="icon-dl-back" @click="resetPlayer()" />
@@ -74,7 +76,9 @@
 </template>
 
 <script>
+import { DlButton } from '@dataloop-ai/components'
 export default {
+  components: { DlButton },
   name: 'VideoComponent',
   /* eslint-disable */
   props: [

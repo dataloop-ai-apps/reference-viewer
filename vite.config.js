@@ -22,7 +22,7 @@ export default defineConfig({
     },
   },
   optimizeDeps: {
-    include: ['lodash', 'pdfjs-dist', 'highlight.js','tokenizr'],
+    include: ['lodash', 'pdfjs-dist', 'highlight.js','tokenizr','flat'],
     exclude: ['node_modules', './node_modules', 'dist', './dist']
   },
   plugins: [
