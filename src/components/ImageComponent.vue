@@ -83,7 +83,7 @@ watch(coords, () => {
 <style lang="scss">
 .imageContainer {
     overflow: hidden;
-    background: #2a2a2e;
+    background: var(--dl-color-studio-panel);
 
     img {
         width: 100vw;
