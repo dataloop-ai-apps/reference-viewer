@@ -1,6 +1,7 @@
 <template>
   <div
-    class="relative bg-[#161b22] w-full h-screen flex items-center justify-center z-10"
+    class="relative w-full h-screen flex items-center justify-center z-10"
+    style="background-color: var(--dell-gray-900);"
   >
     <div class="mask"></div>
     <div
@@ -141,11 +142,11 @@
                 :title="volume === 0 ? 'unmute [m]' : 'mute [m]'"
                 @click.prevent.stop="muteVolume"
               >
-                <i-iconamoon-volume-up-fill v-if="volume > 0.5" />
-                <i-iconamoon-volume-down-fill
-                  v-else-if="volume < 0.5 && volume > 0"
-                />
-                <i-iconamoon-volume-off-fill v-else />
+                <dl-icon icon="icon-dl-audio-filled" v-if="volume > 0.5" />
+                <dl-icon icon="icon-dl-audio-filled" v-else-if="volume < 0.5 && volume > 0" />
+                <dl-icon icon="icon-dl-audio-filled" v-else >
+                  <span class="mute-audio">x</span>
+                </dl-icon>
                 <div
                   class="volume__menu opacity-0 w-fit invisible absolute transition-all duration-500 ease-linear bottom-full pb-2 -translate-x-1/2 left-1/2"
                 >
@@ -171,9 +172,7 @@
 <script setup lang="ts">
 import { onBeforeUnmount, onMounted, ref, watch } from 'vue'
 
-import IIconamoonVolumeUpFill from '~icons/iconamoon/volume-up-fill'
-import IIconamoonVolumeDownFill from '~icons/iconamoon/volume-down-fill'
-import IIconamoonVolumeOffFill from '~icons/iconamoon/volume-off-fill'
+import { DlIcon } from '@dataloop-ai/components'
 
 defineProps({
   url: {
@@ -365,6 +364,12 @@ onBeforeUnmount(() => {
 
 <style lang="scss" scoped>
 .volume__button {
+  .mute-audio {
+    font-size: 10px;
+    position: absolute;
+    top: 4px;
+    left: 7px;
+  }
   &:hover {
     .volume__menu {
       @apply opacity-100 visible duration-75;
