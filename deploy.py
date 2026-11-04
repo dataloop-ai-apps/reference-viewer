@@ -11,11 +11,6 @@ def clean():
     for app in dl.apps.list(filters=apps_filters).all():
         print(app.name, app.project.name)
 
-        models_filters = dl.Filters(field='app.id', values=app.id, resource='models')
-        for model in dl.models.list(filters=models_filters).all():
-            print(model.id, model.name, model.creator, model.project.name)
-            model.delete()
-
         app.uninstall()
 
     [i.delete() for i in list(dpk.revisions.all())]
@@ -48,7 +43,7 @@ def publish_and_install(project: dl.Project, manifest):
 
         app = project.apps.install(dpk=dpk,
                                    app_name=dpk.display_name,
-                                   scope=dl.AppScope.PROJECT)
+                                   scope=dl.AppScope.SYSTEM)
         print(f'installed! app id: {app.id}')
     print(f'Done!')
 
@@ -69,7 +64,7 @@ def update_service():
 if __name__ == "__main__":
     dl.setenv('prod')
     build()
-    project = dl.projects.get(project_name="COCO ors")
+    project = dl.projects.get(project_name="DataloopTasks")
     with open('dataloop.json') as f:
         manifest = json.load(f)
     publish_and_install(manifest=manifest, project=project)
