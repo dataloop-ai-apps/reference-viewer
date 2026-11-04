@@ -11,7 +11,7 @@ export default defineConfig({
   server: {
     port: 3002,
     https: true,
-    host: "0.0.0.0",
+    host: "local.dataloop.ai",
     proxy: {
       '/api': {
         target: 'https://gate.dataloop.ai/api',
@@ -31,9 +31,11 @@ export default defineConfig({
     Components({ resolvers: [IconsResolver()] }),
     Icons(),
   ],
+  publicDir: "public",
   build: {
     // other build options
     rollupOptions: {
+      outDir: "panels/reference-viewer",
       output: {
         manualChunks: {
           vendor: ['vue', 'pdfjs-dist'],
