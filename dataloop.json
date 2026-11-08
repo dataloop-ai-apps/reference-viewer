@@ -12,7 +12,7 @@
         "gitUrl": "https://github.com/dataloop-ai-apps/reference-viewer.git",
         "gitTag": "1.0.61"
     },
-    "scope": "system",
+    "scope": "public",
     "components": {
         "panels": [
             {
